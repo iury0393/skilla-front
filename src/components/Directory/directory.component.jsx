@@ -10,6 +10,7 @@ class Directory extends React.Component {
       sections: [
         {
           title: "Vagas",
+          subtitle: "Encontre vagas nas maiores empresas do Ceará",
           imageUrl:
             "https://images.unsplash.com/flagged/photo-1563536310477-c7b4e3a800c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
           id: 1,
@@ -25,6 +26,7 @@ class Directory extends React.Component {
 
         {
           title: "Cursos/Estudos",
+          subtitle: "Encontre cursos para agregar ao currículo",
           imageUrl:
             "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
           id: 3,
