@@ -6,6 +6,8 @@ import useInput from "../hooks/useInput";
 import { UserContext } from "../context/UserContext";
 import logo from "../assets/logo.png";
 
+import HomePage from "../pages/Homepage/homepage.component"
+
 export const FormWrapper = styled.div`
 	background-color: ${props => props.theme.white};
 	padding: 1rem;
@@ -80,30 +82,33 @@ const Login = ({ register }) => {
 	};
 
 	return (
-		<FormWrapper onSubmit={handleLogin}>
-			<img className="logo" src={logo} alt="logo" />
-			<form>
-				<input
-					type="email"
-					placeholder="exemplo@gmail.com"
-					value={email.value}
-					onChange={email.onChange}
-				/>
-				<input
-					type="password"
-					placeholder="Senha"
-					value={password.value}
-					onChange={password.onChange}
-				/>
-				<input type="submit" value="Entrar" className="login-btn" />
-			</form>
+		<div>
+			<HomePage />
+			<FormWrapper onSubmit={handleLogin}>
+				<img className="logo" src={logo} alt="logo" />
+				<form>
+					<input
+						type="email"
+						placeholder="exemplo@gmail.com"
+						value={email.value}
+						onChange={email.onChange}
+					/>
+					<input
+						type="password"
+						placeholder="Senha"
+						value={password.value}
+						onChange={password.onChange}
+					/>
+					<input type="submit" value="Entrar" className="login-btn" />
+				</form>
 
-			<div>
-				<p>
-					Não tem uma conta? <span onClick={register}>Registro</span>
-				</p>
-			</div>
-		</FormWrapper>
+				<div>
+					<p>
+						Não tem uma conta? <span onClick={register}>Registro</span>
+					</p>
+				</div>
+			</FormWrapper>
+		</div>
 	);
 };
 
