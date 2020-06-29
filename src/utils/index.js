@@ -64,7 +64,6 @@ export const client = (endpoint, { body, ...customConfig } = {}) => {
 	);
 };
 
-/*
 export const uploadImage = file => {
 	const data = new FormData();
 	data.append("file", file);
@@ -74,4 +73,4 @@ export const uploadImage = file => {
 		method: "POST",
 		body: data
 	}).then(res => res.json());
-};*/
+};

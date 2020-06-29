@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Register from "./Signup";
+import Register from "./Register";
 import Login from "./Login";
 
 const Auth = () => {
