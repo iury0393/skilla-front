@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+p {
+  font: 500 30px Orbitron, sans-serif;
+}
+
+.icone-principal {
+  width: 100px;
+  height: 100px;
+}

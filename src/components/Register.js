@@ -86,7 +86,7 @@ const Register = ({ login }) => {
           value={password.value}
           onChange={password.onChange}
         />
-        <input type="submit" value="Regisstre" className="signup-btn" />
+        <input type="submit" value="Registre" className="signup-btn" />
       </form>
 
       <div>
