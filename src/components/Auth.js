@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Register from "./Register";
 import Login from "./Login";
 
+import HomePage from "../pages/Homepage/homepage.component"
+
 const Auth = () => {
   const [auth, setAuth] = useState("LOGIN");
 
@@ -9,11 +11,20 @@ const Auth = () => {
   const register = () => setAuth("REGISTER");
 
   if (auth === "LOGIN") {
-    return <Login register={register} />;
+    return (
+      <>
+        <HomePage />
+        <Login register={register} />
+      </>
+    );
   }
 
   if (auth === "REGISTER") {
-    return <Register login={login} />;
+    return (
+      <>
+        <Register login={login} />
+      </>
+    );
   }
 };
 
