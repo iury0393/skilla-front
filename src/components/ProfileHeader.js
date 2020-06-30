@@ -193,9 +193,9 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
                   history.push(`/${user.username}`);
                 }}
               >
-                {user.username}
+                {user.fullname}
               </h3>
-              <span>{user.fullname}</span>
+              <span>{user.username}</span>
             </div>
           </div>
           <Follow isFollowing={user.isFollowing} userId={user._id} />
@@ -235,7 +235,7 @@ const ProfileHeader = ({ profile }) => {
         <img className="avatar" src={profile?.avatar} alt="avatar" />
         <div className="profile-info">
           <div className="profile-meta">
-            <h2>{profile?.username}</h2>
+            <h2>{profile?.fullname}</h2>
             {profile?.isMe ? (
               <div className="options">
                 <Button
@@ -291,7 +291,7 @@ const ProfileHeader = ({ profile }) => {
           </div>
 
           <div className="bio">
-            <span className="bold">{profile?.fullname}</span>
+            <span className="bold">{profile?.username}</span>
             <p>{profile?.bio}</p>
             <a
               href={profile?.website}

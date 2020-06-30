@@ -44,7 +44,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
       <>
         {nobtn ? (
           <span className="pointer" onClick={() => handleFollow()}>
-            Follow
+            Seguir
           </span>
         ) : (
           <Button onClick={() => handleFollow()}>Seguir</Button>

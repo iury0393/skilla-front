@@ -160,7 +160,7 @@ const Post = ({ post }) => {
 						className="pointer"
 						onClick={() => history.push(`/${post.user?.username}`)}
 					>
-						{post.user?.username}
+						{post.user?.fullname}
 					</h3>
 				</div>
 
@@ -202,7 +202,7 @@ const Post = ({ post }) => {
 						onClick={() => history.push(`/${post.user?.username}`)}
 						className="pointer username bold"
 					>
-						{post.user?.username}
+						{post.user?.fullname}
 					</span>
 					{post.caption}
 				</p>
