@@ -8,6 +8,7 @@ import Button from "../styles/Button";
 import { UserContext } from "../context/UserContext";
 import { OptionsIcon } from "./Icons";
 import { CloseIcon } from "./Icons";
+import { FiLogOut } from "react-icons/fi";
 
 const MobileWrapper = styled.div`
   margin: 1rem 0;
@@ -244,7 +245,7 @@ const ProfileHeader = ({ profile }) => {
                 >
                   Editar Perfil
                 </Button>
-                <OptionsIcon onClick={handleLogout} />
+                <FiLogOut className="icon-logout" size={30} onClick={handleLogout} />
               </div>
             ) : (
               <Follow
