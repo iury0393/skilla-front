@@ -70,7 +70,7 @@ const NoFeedSuggestions = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <h3 style={{ marginBottom: "0.7rem" }}>Suggestions for you</h3>
+      <h3 style={{ marginBottom: "0.7rem" }}>Sugestões para você</h3>
       <Wrapper>
         {users.map((user) => (
           <div key={user._id} className="suggestion">
@@ -86,9 +86,9 @@ const NoFeedSuggestions = () => {
                   className="pointer"
                   onClick={() => history.push(`/${user.username}`)}
                 >
-                  {user.username}
+                  {user.fullname}
                 </h4>
-                <span className="secondary">{user.fullname}</span>
+                <span className="secondary">{user.username}</span>
               </div>
             </div>
             <Follow isFollowing={user.isFollowing} userId={user._id} />

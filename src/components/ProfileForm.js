@@ -153,7 +153,7 @@ const ProfileForm = () => {
 					<div className="change-avatar-meta">
 						<h2>{user.username}</h2>
 						<label htmlFor="change-avatar-link">
-							<span>Change Profile Photo</span>
+							<span>Troque a imagem de profile</span>
 						</label>
 						<input
 							id="change-avatar-link"
@@ -165,7 +165,7 @@ const ProfileForm = () => {
 				</div>
 
 				<div className="input-group">
-					<label className="bold">Name</label>
+					<label className="bold">Nome</label>
 					<input
 						type="text"
 						value={fullname.value}
@@ -174,7 +174,7 @@ const ProfileForm = () => {
 				</div>
 
 				<div className="input-group">
-					<label className="bold">Username</label>
+					<label className="bold">Usuário</label>
 					<input
 						type="text"
 						value={username.value}

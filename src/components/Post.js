@@ -230,7 +230,7 @@ const Post = ({ post }) => {
 			<div className="add-comment">
 				<textarea
 					columns="3"
-					placeholder="Add a Comment"
+					placeholder="Adicione um comentário"
 					value={comment.value}
 					onChange={comment.onChange}
 					onKeyDown={handleAddComment}

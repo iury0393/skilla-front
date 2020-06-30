@@ -35,7 +35,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
             Following
           </span>
         ) : (
-          <Button onClick={() => handleFollow()}>Following</Button>
+          <Button onClick={() => handleFollow()}>Seguindo</Button>
         )}
       </>
     );
@@ -47,7 +47,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
             Follow
           </span>
         ) : (
-          <Button onClick={() => handleFollow()}>Follow</Button>
+          <Button onClick={() => handleFollow()}>Seguir</Button>
         )}
       </>
     );

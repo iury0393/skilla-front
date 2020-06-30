@@ -35,7 +35,7 @@ const Auth = () => {
             </Modal.Header>
             <Modal.Body><Login register={register} /></Modal.Body>
             <Modal.Footer>
-              <Button variant="outline-danger" onClick={hideModal}>Cancel</Button>
+              <Button variant="outline-danger" onClick={hideModal}>Cancelar</Button>
             </Modal.Footer>
           </Modal>
         </>
@@ -54,7 +54,7 @@ const Auth = () => {
             <Nav className="mr-auto">
               <></>
             </Nav>
-            <Nav.Link><Button variant="primary" onClick={showModal}>Login</Button></Nav.Link>
+            <Nav.Link><Button variant="primary" onClick={showModal}>Entrar</Button></Nav.Link>
           </Navbar.Collapse>
         </Navbar>
         <HomePage />
@@ -72,7 +72,7 @@ const Auth = () => {
             </Modal.Header>
             <Modal.Body><Register login={login} /></Modal.Body>
             <Modal.Footer>
-              <Button variant="outline-danger" onClick={hideModal}>Cancel</Button>
+              <Button variant="outline-danger" onClick={hideModal}>Cancelar</Button>
             </Modal.Footer>
           </Modal>
         </>
@@ -91,7 +91,7 @@ const Auth = () => {
             <Nav className="mr-auto">
               <></>
             </Nav>
-            <Nav.Link><Button variant="primary" onClick={showModal}>Login</Button></Nav.Link>
+            <Nav.Link><Button variant="primary" onClick={showModal}>Registrar</Button></Nav.Link>
           </Navbar.Collapse>
         </Navbar>
         <HomePage />
