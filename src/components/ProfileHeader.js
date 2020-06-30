@@ -6,8 +6,7 @@ import Follow from "./Follow";
 import Modal from "./Modal";
 import Button from "../styles/Button";
 import { UserContext } from "../context/UserContext";
-import { OptionsIcon } from "./Icons";
-import { CloseIcon } from "./Icons";
+import { FiLogOut, FiX } from "react-icons/fi";
 
 const MobileWrapper = styled.div`
   margin: 1rem 0;
@@ -171,7 +170,7 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
 		<div style={{ maxHeight: '400px', overflowY: 'auto' }}>
       <div style={modalHeaderStyle}>
         <h3>{title}</h3>
-        <CloseIcon onClick={closeModal} />
+        <FiX size={30} onClick={closeModal} />
       </div>
       {users.map((user) => (
         <ModalContentWrapper key={user._id}>
@@ -193,9 +192,9 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
                   history.push(`/${user.username}`);
                 }}
               >
-                {user.username}
+                {user.fullname}
               </h3>
-              <span>{user.fullname}</span>
+              <span>{user.username}</span>
             </div>
           </div>
           <Follow isFollowing={user.isFollowing} userId={user._id} />
@@ -235,16 +234,16 @@ const ProfileHeader = ({ profile }) => {
         <img className="avatar" src={profile?.avatar} alt="avatar" />
         <div className="profile-info">
           <div className="profile-meta">
-            <h2>{profile?.username}</h2>
+            <h2>{profile?.fullname}</h2>
             {profile?.isMe ? (
               <div className="options">
                 <Button
                   secondary
                   onClick={() => history.push("/accounts/edit")}
                 >
-                  Edit Profile
+                  Editar Perfil
                 </Button>
-                <OptionsIcon onClick={handleLogout} />
+                <FiLogOut className="icon-logout" size={30} onClick={handleLogout} />
               </div>
             ) : (
               <Follow
@@ -257,14 +256,14 @@ const ProfileHeader = ({ profile }) => {
           </div>
 
           <div className="profile-stats">
-            <span>{profile?.postCount} posts</span>
+            <span>{profile?.postCount} Posts</span>
 
             <span className="pointer" onClick={() => setFollowersModal(true)}>
-              {followersState} followers
+              {followersState} Seguidores
             </span>
 
             <span className="pointer" onClick={() => setFollowingModal(true)}>
-              {profile?.followingCount} following
+              {profile?.followingCount} Seguindo
             </span>
 
             {showFollowersModal && profile?.followers.length > 0 && (
@@ -272,7 +271,7 @@ const ProfileHeader = ({ profile }) => {
                 <ModalContent
                   loggedInUser={user}
                   users={profile?.followers}
-                  title="Followers"
+                  title="Seguidores"
                   closeModal={closeModal}
                 />
               </Modal>
@@ -283,7 +282,7 @@ const ProfileHeader = ({ profile }) => {
                 <ModalContent
                   loggedInUser={user}
                   users={profile?.following}
-                  title="Following"
+                  title="Seguindo"
                   closeModal={closeModal}
                 />
               </Modal>
@@ -291,7 +290,7 @@ const ProfileHeader = ({ profile }) => {
           </div>
 
           <div className="bio">
-            <span className="bold">{profile?.fullname}</span>
+            <span className="bold">{profile?.username}</span>
             <p>{profile?.bio}</p>
             <a
               href={profile?.website}
@@ -305,14 +304,14 @@ const ProfileHeader = ({ profile }) => {
       </Wrapper>
       <MobileWrapper>
         <div className="mobile-profile-stats">
-          <span>{profile?.postCount} posts</span>
+          <span>{profile?.postCount} Posts</span>
 
           <span className="pointer" onClick={() => setFollowersModal(true)}>
-            {followersState} followers
+            {followersState} Seguidores
           </span>
 
           <span className="pointer" onClick={() => setFollowingModal(true)}>
-            {profile?.followingCount} following
+            {profile?.followingCount} Seguindo
           </span>
 
           {showFollowersModal && profile?.followers.length > 0 && (
@@ -320,7 +319,7 @@ const ProfileHeader = ({ profile }) => {
               <ModalContent
                 loggedInUser={user}
                 users={profile?.followers}
-                title="Followers"
+                title="Seguidores"
                 closeModal={closeModal}
               />
             </Modal>
@@ -331,7 +330,7 @@ const ProfileHeader = ({ profile }) => {
               <ModalContent
                 loggedInUser={user}
                 users={profile?.following}
-                title="Following"
+                title="Seguindo"
                 closeModal={closeModal}
               />
             </Modal>

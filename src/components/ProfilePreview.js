@@ -33,7 +33,7 @@ const ProfilePreview = ({ user }) => {
       <img src={avatar} alt="avatar" />
       <h4>{user.username}</h4>
       <span className="fullname">{user.fullname}</span>
-      <Button>Follow</Button>
+      <Button>Seguir</Button>
     </Wrapper>
   );
 };

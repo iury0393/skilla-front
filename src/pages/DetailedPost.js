@@ -1,18 +1,14 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
-import LikePost from "../components/LikePost";
-import SavePost from "../components/SavePost";
-import Comment from "../components/Comment";
 import Placeholder from "../components/Placeholder";
 import Avatar from "../styles/Avatar";
 import Loader from "../components/Loader";
 import Modal from "../components/Modal";
 import { ModalContent } from "../components/Post";
-import useInput from "../hooks/useInput";
 import { client } from "../utils";
 import { timeSince } from "../utils";
-import { MoreIcon, CommentIcon, InboxIcon } from "../components/Icons";
+import { MoreIcon, InboxIcon } from "../components/Icons";
 
 const Wrapper = styled.div`
   display: grid;
@@ -99,9 +95,6 @@ const DetailedPost = () => {
   const history = useHistory();
   const { postId } = useParams();
 
-  const comment = useInput("");
-  const commmentsEndRef = useRef(null);
-
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
 
@@ -109,35 +102,12 @@ const DetailedPost = () => {
   const [deadend, setDeadend] = useState(false);
   const [post, setPost] = useState({});
 
-  const [likesState, setLikes] = useState(0);
-  const [commentsState, setComments] = useState([]);
-
-  const incLikes = () => setLikes(likesState + 1);
-  const decLikes = () => setLikes(likesState - 1);
-
-  const scrollToBottom = () =>
-    commmentsEndRef.current.scrollIntoView({ behaviour: "smooth" });
-
-  const handleAddComment = (e) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-
-			client(`/posts/${post._id}/comments`, { body: { text: comment.value } }).then(resp => {
-        setComments([...commentsState, resp.data]);
-        scrollToBottom();
-			})
-
-      comment.setValue("");
-    }
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     client(`/posts/${postId}`)
       .then((res) => {
         setPost(res.data);
-        setComments(res.data.comments);
-        setLikes(res.data.likesCount);
         setLoading(false);
         setDeadend(false);
       })
@@ -196,30 +166,14 @@ const DetailedPost = () => {
         </div>
 
         <div className="comments">
-          {commentsState.map((comment) => (
-            <Comment key={comment._id} comment={comment} />
-          ))}
-          <div ref={commmentsEndRef} />
+
         </div>
 
         <div className="post-actions-stats">
           <div className="post-actions">
-            <LikePost
-              isLiked={post?.isLiked}
-              postId={post?._id}
-              incLikes={incLikes}
-              decLikes={decLikes}
-            />
-            <CommentIcon />
             <InboxIcon />
-            <SavePost isSaved={post?.isSaved} postId={post?._id} />
           </div>
 
-          {likesState !== 0 && (
-            <span className="likes bold">
-              {likesState} {likesState > 1 ? "likes" : "like"}
-            </span>
-          )}
         </div>
 
         <span
@@ -228,16 +182,6 @@ const DetailedPost = () => {
         >
           {timeSince(post.createdAt)} ago
         </span>
-
-        <div className="add-comment">
-          <textarea
-            columns="2"
-            placeholder="Adicione um comentário"
-            value={comment.value}
-            onChange={comment.onChange}
-            onKeyDown={handleAddComment}
-          ></textarea>
-        </div>
       </div>
     </Wrapper>
   );

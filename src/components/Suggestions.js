@@ -42,6 +42,16 @@ const Wrapper = styled.div`
     top: -0.3rem;
   }
 
+  .suggestions-title {
+    font-weight: bold;
+    font-size: 27px;
+    padding-bottom: 20px;
+  }
+
+  .user-name {
+    font-size: 20px;
+  }
+
   span {
     color: ${(props) => props.theme.blue};
     font-weight: 500;
@@ -81,12 +91,12 @@ export const UserCard = ({ user }) => {
 
       <div className="user-info">
         <h3
-          className="pointer"
+          className="pointer user-name"
           onClick={() => history.push(`/${user.username}`)}
         >
-          {user.username}
+          {user.fullname}
         </h3>
-        <span>{user.fullname}</span>
+        <span>{user.username}</span>
       </div>
     </StyledUserCard>
   );
@@ -107,7 +117,7 @@ const Suggestions = () => {
       <UserCard user={user} />
 
       <div className="suggestions">
-        <h3>Suggestions For You</h3>
+        <h3 className="suggestions-title">Sugestões para você</h3>
         {users.slice(0, 4).map((user) => (
           <div key={user.username} className="suggestions-usercard">
             <UserCard user={user} />

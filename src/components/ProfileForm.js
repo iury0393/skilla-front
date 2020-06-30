@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import styled from "styled-components";
@@ -6,7 +6,6 @@ import Button from "../styles/Button";
 import Avatar from "../styles/Avatar";
 import useInput from "../hooks/useInput";
 import { UserContext } from "../context/UserContext";
-import { uploadImage } from "../utils";
 import { client } from "../utils";
 
 export const Wrapper = styled.div`
@@ -89,18 +88,11 @@ export const Wrapper = styled.div`
 const ProfileForm = () => {
 	const history = useHistory();
 	const { user, setUser } = useContext(UserContext);
-	const [newAvatar, setNewAvatar] = useState("");
 
 	const fullname = useInput(user.fullname);
 	const username = useInput(user.username);
 	const bio = useInput(user.bio);
 	const website = useInput(user.website);
-
-	const handleImageUpload = e => {
-		if (e.target.files[0]) {
-			uploadImage(e.target.files[0]).then(res => setNewAvatar(res.secure_url));
-		}
-	};
 
 	const handleEditProfile = e => {
 		e.preventDefault();
@@ -119,7 +111,6 @@ const ProfileForm = () => {
 			username: username.value,
 			bio: bio.value,
 			website: website.value,
-			avatar: newAvatar || user.avatar
 		};
 
 		client("/users", { method: "PUT", body })
@@ -139,33 +130,18 @@ const ProfileForm = () => {
 						<label htmlFor="change-avatar">
 							<Avatar
 								lg
-								src={newAvatar ? newAvatar : user.avatar}
+								src={user.avatar}
 								alt="avatar"
 							/>
 						</label>
-						<input
-							id="change-avatar"
-							accept="image/*"
-							type="file"
-							onChange={handleImageUpload}
-						/>
 					</div>
 					<div className="change-avatar-meta">
 						<h2>{user.username}</h2>
-						<label htmlFor="change-avatar-link">
-							<span>Change Profile Photo</span>
-						</label>
-						<input
-							id="change-avatar-link"
-							accept="image/*"
-							type="file"
-							onChange={handleImageUpload}
-						/>
 					</div>
 				</div>
 
 				<div className="input-group">
-					<label className="bold">Name</label>
+					<label className="bold">Nome</label>
 					<input
 						type="text"
 						value={fullname.value}
@@ -174,7 +150,7 @@ const ProfileForm = () => {
 				</div>
 
 				<div className="input-group">
-					<label className="bold">Username</label>
+					<label className="bold">Usuário</label>
 					<input
 						type="text"
 						value={username.value}

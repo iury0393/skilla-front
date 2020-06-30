@@ -5,7 +5,7 @@ import PostPreview from "../components/PostPreview";
 import ProfileHeader from "../components/ProfileHeader";
 import Placeholder from "../components/Placeholder";
 import Loader from "../components/Loader";
-import { PostIcon, SavedIcon } from "../components/Icons";
+import { PostIcon } from "../components/Icons";
 import { client } from "../utils";
 
 const Wrapper = styled.div`
@@ -81,13 +81,6 @@ const Profile = () => {
           <PostIcon />
           <span>Posts</span>
         </div>
-        <div
-          style={{ fontWeight: tab === "SAVED" ? "500" : "" }}
-          onClick={() => setTab("SAVED")}
-        >
-          <SavedIcon />
-          <span>Saved</span>
-        </div>
       </div>
 
       {tab === "POSTS" && (
@@ -100,20 +93,6 @@ const Profile = () => {
             />
           ) : (
             <PostPreview posts={profile?.posts} />
-          )}
-        </>
-      )}
-
-      {tab === "SAVED" && (
-        <>
-          {profile?.savedPosts?.length === 0 ? (
-            <Placeholder
-              title="Salvos"
-              text="Salve publicações que quer ver denovo"
-              icon="bookmark"
-            />
-          ) : (
-            <PostPreview posts={profile?.savedPosts} />
           )}
         </>
       )}
