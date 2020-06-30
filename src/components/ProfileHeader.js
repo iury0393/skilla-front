@@ -6,9 +6,7 @@ import Follow from "./Follow";
 import Modal from "./Modal";
 import Button from "../styles/Button";
 import { UserContext } from "../context/UserContext";
-import { OptionsIcon } from "./Icons";
-import { CloseIcon } from "./Icons";
-import { FiLogOut } from "react-icons/fi";
+import { FiLogOut, FiX } from "react-icons/fi";
 
 const MobileWrapper = styled.div`
   margin: 1rem 0;
@@ -172,7 +170,7 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
 		<div style={{ maxHeight: '400px', overflowY: 'auto' }}>
       <div style={modalHeaderStyle}>
         <h3>{title}</h3>
-        <CloseIcon onClick={closeModal} />
+        <FiX size={30} onClick={closeModal} />
       </div>
       {users.map((user) => (
         <ModalContentWrapper key={user._id}>

@@ -28,6 +28,11 @@ export const ModalWrapper = styled.div`
     border-radius: 4px;
     margin: auto;
     justify-self: center;
+    width: 50%;
+  }
+
+  .modal-content div {
+    margin-left: 25%;
   }
 
   .modal-content img.post-preview {

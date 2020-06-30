@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import NewPost from "./NewPost";
-import Search from "./Search";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
-import { HomeIcon, ExploreIcon, HeartIcon } from "./Icons";
+import NewPost from "./NewPost";
+import { HomeIcon, ExploreIcon } from "./Icons";
+import Shop from '../assets/shopping-bag.svg';
 
 const NavWrapper = styled.div`
   position: fixed;
@@ -62,7 +62,6 @@ const Nav = () => {
         <Link to="/">
           <img className="nav-logo" src={navlogo} alt="logo" />
         </Link>
-        <Search />
         <ul>
           <li>
             <Link to="/">
@@ -78,7 +77,18 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <HeartIcon />
+          <Link to={`/shop`}>
+              <img
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  objectFit: "cover",
+                  borderRadius: "12px",
+                }}
+                src={Shop}
+                alt="shop"
+              />
+            </Link>
           </li>
           <li>
             <Link to={`/${user.username}`}>

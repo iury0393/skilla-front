@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BookmarkIcon, PostIcon } from "./Icons";
+import { PostIcon } from "./Icons";
 
 const Wrapper = styled.div`
   margin: auto;
@@ -31,7 +31,6 @@ const Wrapper = styled.div`
 const Placeholder = ({ icon, title, text }) => {
   return (
     <Wrapper>
-      {icon === "bookmark" && <BookmarkIcon />}
       {icon === "post" && <PostIcon />}
       <h2>{title}</h2>
       <p>{text}</p>
