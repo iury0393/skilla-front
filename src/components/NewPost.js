@@ -121,15 +121,15 @@ const NewPost = () => {
 				<Modal>
 					<div className="modal-content">
 						<div className="newpost-header">
-							<h3 onClick={() => setShowModal(false)}>Cancel</h3>
-							<h3 onClick={handleSubmitPost}>Share</h3>
+							<h3 onClick={() => setShowModal(false)}>Cancelar</h3>
+							<h3 onClick={handleSubmitPost}>Compartilhar</h3>
 						</div>
 						{preview && (
 							<img className="post-preview" src={preview} alt="preview" />
 						)}
 						<div>
 							<textarea
-								placeholder="Add caption"
+								placeholder="Adicione uma legenda"
 								value={caption.value}
 								onChange={caption.onChange}
 							/>
