@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { HeartIcon, CommentIcon } from "./Icons";
 
 const Wrapper = styled.div`
 	margin-top: 1rem;
@@ -114,6 +115,16 @@ const ProfilePreview = ({ posts }) => {
           onClick={() => history.push(`/p/${post._id}`)}
         >
           <img src={post.files[0]} alt="post" />
+          <div className="overlay">
+            <div className="overlay-content">
+              <span>
+                <HeartIcon /> {post.likesCount}
+              </span>
+              <span>
+                <CommentIcon /> {post.commentsCount}
+              </span>
+            </div>
+          </div>
         </div>
       ))}
     </Wrapper>
