@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../utils";
-import { HeartIcon, FilledHeartIcon } from "./Icons";
+import { FiHeart } from "react-icons/fi";
+import { MdFavorite } from "react-icons/md";
 
 const LikePost = ({ isLiked, postId, incLikes, decLikes }) => {
   const [likedState, setLiked] = useState(isLiked);
@@ -22,11 +23,11 @@ const LikePost = ({ isLiked, postId, incLikes, decLikes }) => {
   };
 
   if (likedState) {
-    return <FilledHeartIcon onClick={handleToggleLike} />;
+    return <MdFavorite size={25} color={"#5931bf"} onClick={handleToggleLike} />;
   }
 
   if (!likedState) {
-    return <HeartIcon onClick={handleToggleLike} />;
+    return <FiHeart size={25} color={"#5931bf"} onClick={handleToggleLike} />;
   }
 };
 

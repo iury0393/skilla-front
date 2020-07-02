@@ -4,8 +4,7 @@ import styled from "styled-components";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
-import { HomeIcon, ExploreIcon } from "./Icons";
-import Shop from '../assets/shopping-bag.svg';
+import { FiHome, FiGlobe, FiShoppingBag } from "react-icons/fi";
 
 const NavWrapper = styled.div`
   position: fixed;
@@ -65,7 +64,7 @@ const Nav = () => {
         <ul>
           <li>
             <Link to="/">
-              <HomeIcon />
+              <FiHome size={25} color={"#5931bf"} />
             </Link>
           </li>
           <li>
@@ -73,21 +72,12 @@ const Nav = () => {
           </li>
           <li>
             <Link to="/explore">
-              <ExploreIcon />
+              <FiGlobe size={25} color={"#5931bf"} />
             </Link>
           </li>
           <li>
           <Link to={`/shop`}>
-              <img
-                style={{
-                  width: "24px",
-                  height: "24px",
-                  objectFit: "cover",
-                  borderRadius: "12px",
-                }}
-                src={Shop}
-                alt="shop"
-              />
+            <FiShoppingBag size={25} color={"#5931bf"} />
             </Link>
           </li>
           <li>

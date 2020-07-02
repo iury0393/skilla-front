@@ -11,7 +11,8 @@ import { ModalContent } from "../components/Post";
 import useInput from "../hooks/useInput";
 import { client } from "../utils";
 import { timeSince } from "../utils";
-import { MoreIcon, InboxIcon } from "../components/Icons";
+import { FiMoreHorizontal, FiSend } from "react-icons/fi"
+
 
 const Wrapper = styled.div`
   display: grid;
@@ -181,7 +182,7 @@ const DetailedPost = () => {
               {post.user?.username}
             </h3>
           </div>
-          {post.isMine && <MoreIcon onClick={() => setShowModal(true)} />}
+          {post.isMine && <FiMoreHorizontal size={25} color={"#5931bf"} onClick={() => setShowModal(true)} />}
 
           {showModal && (
             <Modal>
@@ -209,7 +210,7 @@ const DetailedPost = () => {
               incLikes={incLikes}
               decLikes={decLikes}
             />
-            <InboxIcon />
+            <FiSend size={25} color={"#5931bf"}/>
           </div>
 
           {likesState !== 0 && (

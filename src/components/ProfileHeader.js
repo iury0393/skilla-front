@@ -170,7 +170,7 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
 		<div style={{ maxHeight: '400px', overflowY: 'auto' }}>
       <div style={modalHeaderStyle}>
         <h3>{title}</h3>
-        <FiX size={30} onClick={closeModal} />
+        <FiX size={30} color={"#5931bf"} onClick={closeModal} />
       </div>
       {users.map((user) => (
         <ModalContentWrapper key={user._id}>
@@ -243,7 +243,7 @@ const ProfileHeader = ({ profile }) => {
                 >
                   Editar Perfil
                 </Button>
-                <FiLogOut className="icon-logout" size={30} onClick={handleLogout} />
+                <FiLogOut className="icon-logout" size={30} color={"#5931bf"} onClick={handleLogout} />
               </div>
             ) : (
               <Follow

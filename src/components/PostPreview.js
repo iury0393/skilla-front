@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { HeartIcon, CommentIcon } from "./Icons";
+import { FiHeart, FiMessageSquare } from "react-icons/fi";
 
 const Wrapper = styled.div`
 	margin-top: 1rem;
@@ -118,10 +118,10 @@ const ProfilePreview = ({ posts }) => {
           <div className="overlay">
             <div className="overlay-content">
               <span>
-                <HeartIcon /> {post.likesCount}
+                <FiHeart size={25} color={"#5931bf"} /> {post.likesCount}
               </span>
               <span>
-                <CommentIcon /> {post.commentsCount}
+                <FiMessageSquare size={25} color={"#5931bf"} /> {post.commentsCount}
               </span>
             </div>
           </div>

@@ -108,7 +108,7 @@ const NewPost = () => {
 	return (
 		<NewPostWrapper>
 			<label htmlFor="upload-post">
-				<FiPlusSquare size={24} />
+				<FiPlusSquare size={25} color={"#5931bf"} />
 			</label>
 			<input
 				id="upload-post"

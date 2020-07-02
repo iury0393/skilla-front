@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "../styles/Button";
 import { client } from "../utils";
+import { FiCornerDownRight, FiCornerDownLeft } from "react-icons/fi";
 
 const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
   const [followingState, setFollowingState] = useState(isFollowing);
@@ -32,7 +33,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
             className="pointer"
             onClick={() => handleFollow()}
           >
-            Following
+            <FiCornerDownLeft size={40} color={"#5931bf"} />
           </span>
         ) : (
           <Button onClick={() => handleFollow()}>Seguindo</Button>
@@ -44,7 +45,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
       <>
         {nobtn ? (
           <span className="pointer" onClick={() => handleFollow()}>
-            Seguir
+            <FiCornerDownRight size={40} color={"#5931bf"} />
           </span>
         ) : (
           <Button onClick={() => handleFollow()}>Seguir</Button>
