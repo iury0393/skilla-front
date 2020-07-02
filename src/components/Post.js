@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import LikePost from "./LikePost";
+import Comment from "./Comment";
 import DeletePost from "./DeletePost";
 import Modal from "./Modal";
+import useInput from "../hooks/useInput";
 import Avatar from "../styles/Avatar";
+import { client } from "../utils";
 import { timeSince } from "../utils";
-import { MoreIcon, InboxIcon } from "./Icons";
+import { MoreIcon, CommentIcon, InboxIcon } from "./Icons";
 
 const ModalContentWrapper = styled.div`
 	width: 300px;
@@ -117,11 +121,29 @@ export const PostWrapper = styled.div`
 `;
 
 const Post = ({ post }) => {
+	const comment = useInput("");
 	const history = useHistory();
 
 	const [showModal, setShowModal] = useState(false);
 	const closeModal = () => setShowModal(false);
 
+	const [newComments, setNewComments] = useState([]);
+	const [likesState, setLikes] = useState(post.likesCount);
+
+	const incLikes = () => setLikes(likesState + 1);
+	const decLikes = () => setLikes(likesState - 1);
+
+	const handleAddComment = e => {
+		if (e.keyCode === 13) {
+			e.preventDefault();
+
+			client(`/posts/${post._id}/comments`, {
+				body: { text: comment.value }
+			}).then(resp => setNewComments([...newComments, resp.data]));
+
+			comment.setValue("");
+		}
+	};
 
 	return (
 		<PostWrapper>
@@ -156,10 +178,23 @@ const Post = ({ post }) => {
 			/>
 
 			<div className="post-actions">
+				<LikePost
+					isLiked={post.isLiked}
+					postId={post._id}
+					incLikes={incLikes}
+					decLikes={decLikes}
+				/>
+				<CommentIcon onClick={() => history.push(`/p/${post._id}`)} />
 				<InboxIcon />
 			</div>
 
 			<div className="likes-caption-comments">
+				{likesState !== 0 && (
+					<span className="likes bold">
+						{likesState} {likesState > 1 ? "likes" : "like"}
+					</span>
+				)}
+
 				<p>
 					<span
 						onClick={() => history.push(`/${post.user?.username}`)}
@@ -170,7 +205,34 @@ const Post = ({ post }) => {
 					{post.caption}
 				</p>
 
+				{post.commentsCount > 2 && (
+					<span
+						onClick={() => history.push(`/p/${post._id}`)}
+						className="view-comments"
+					>
+						View all {post.commentsCount} comments
+					</span>
+				)}
+
+				{post.comments?.slice(0, 2).map(comment => (
+					<Comment key={comment._id} hideavatar={true} comment={comment} />
+				))}
+
+				{newComments.map(comment => (
+					<Comment key={comment._id} hideavatar={true} comment={comment} />
+				))}
+
 				<span className="secondary">{timeSince(post?.createdAt)} ago</span>
+			</div>
+
+			<div className="add-comment">
+				<textarea
+					columns="3"
+					placeholder="Adicione um comentário"
+					value={comment.value}
+					onChange={comment.onChange}
+					onKeyDown={handleAddComment}
+				></textarea>
 			</div>
 		</PostWrapper>
 	);
