@@ -8,6 +8,7 @@ import useInput from "../hooks/useInput";
 import { UserContext } from "../context/UserContext";
 import { uploadImage } from "../utils";
 import { client } from "../utils";
+import { FiCheck } from "react-icons/fi";
 
 export const Wrapper = styled.div`
 	padding: 1rem;
@@ -200,7 +201,7 @@ const ProfileForm = () => {
 					></textarea>
 				</div>
 
-				<Button>Submit</Button>
+				<Button style={{backgroundColor: "#FFF", borderColor: "#5931bf"}}><FiCheck size={60} color={"#5931bf"} /></Button>
 			</form>
 		</Wrapper>
 	);

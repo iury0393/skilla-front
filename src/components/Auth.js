@@ -54,7 +54,7 @@ const Auth = () => {
             <Nav className="mr-auto">
               <></>
             </Nav>
-            <Nav.Link><Button variant="primary" onClick={showModal}>Entrar</Button></Nav.Link>
+            <Nav.Link><Button style={{backgroundColor: "#5931BF"}} onClick={showModal}>Entrar</Button></Nav.Link>
           </Navbar.Collapse>
         </Navbar>
         <HomePage />
@@ -91,7 +91,7 @@ const Auth = () => {
             <Nav className="mr-auto">
               <></>
             </Nav>
-            <Nav.Link><Button variant="primary" onClick={showModal}>Registrar</Button></Nav.Link>
+            <Nav.Link><Button style={{backgroundColor: "#5931BF"}} onClick={showModal}>Registrar</Button></Nav.Link>
           </Navbar.Collapse>
         </Navbar>
         <HomePage />
