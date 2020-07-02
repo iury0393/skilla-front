@@ -5,7 +5,7 @@ import { Modal, Button, Navbar, Nav } from 'react-bootstrap';
 import Register from "./Register";
 import Login from "./Login";
 
-import HomePage from "../pages/Homepage/homepage.component";
+import HomePage from "../pages/Homepage/homepage.component.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from '../assets/logo.png';
 

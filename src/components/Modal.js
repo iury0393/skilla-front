@@ -36,7 +36,7 @@ export const ModalWrapper = styled.div`
   }
 
   .modal-content img.post-preview {
-    width: 100%;
+    width: 50%;
     height: 100%;
     object-fit: contain;
   }

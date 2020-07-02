@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import DetailedPost from "./pages/DetailedPost";
 import EditProfile from "./pages/EditProfile";
+import Shop from "./pages/ShopPage/shop.component.jsx";
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
       <Container>
         <Switch>
           <Route path="/explore" component={Explore} />
+          <Route path="/shop" component={Shop} />
           <Route path="/p/:postId" component={DetailedPost} />
           <Route path="/accounts/edit" component={EditProfile} />
           <Route path="/:username" component={Profile} />
