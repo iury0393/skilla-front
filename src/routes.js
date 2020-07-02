@@ -8,7 +8,7 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import DetailedPost from "./pages/DetailedPost";
 import EditProfile from "./pages/EditProfile";
-import Shop from "./pages/Shop";
+import Shop from "./pages/ShopPage/shop.component.jsx";
 
 const Routing = () => {
   return (
