@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PostIcon } from "./Icons";
+import { FiArchive } from "react-icons/fi";
 
 const Wrapper = styled.div`
   margin: auto;
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 const Placeholder = ({ icon, title, text }) => {
   return (
     <Wrapper>
-      {icon === "post" && <PostIcon />}
+      {icon === "post" && <FiArchive size={25} color={"#5931bf"} />}
       <h2>{title}</h2>
       <p>{text}</p>
     </Wrapper>

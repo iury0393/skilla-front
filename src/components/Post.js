@@ -9,7 +9,7 @@ import useInput from "../hooks/useInput";
 import Avatar from "../styles/Avatar";
 import { client } from "../utils";
 import { timeSince } from "../utils";
-import { MoreIcon, CommentIcon, InboxIcon } from "./Icons";
+import { FiMoreHorizontal, FiMessageSquare, FiSend } from "react-icons/fi"
 
 const ModalContentWrapper = styled.div`
 	width: 300px;
@@ -168,7 +168,7 @@ const Post = ({ post }) => {
 						<ModalContent postId={post._id} closeModal={closeModal} />
 					</Modal>
 				)}
-				{post.isMine && <MoreIcon onClick={() => setShowModal(true)} />}
+				{post.isMine && <FiMoreHorizontal size={25} color={"#5931bf"} onClick={() => setShowModal(true)} />}
 			</div>
 
 			<img
@@ -184,8 +184,8 @@ const Post = ({ post }) => {
 					incLikes={incLikes}
 					decLikes={decLikes}
 				/>
-				<CommentIcon onClick={() => history.push(`/p/${post._id}`)} />
-				<InboxIcon />
+				<FiMessageSquare size={25} color={"#5931bf"} onClick={() => history.push(`/p/${post._id}`)} />
+				<FiSend size={25} color={"#5931bf"} />
 			</div>
 
 			<div className="likes-caption-comments">

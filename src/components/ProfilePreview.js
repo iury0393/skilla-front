@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import avatar from "../assets/default_avatar.jpg";
-import Button from "../styles/Button";
+import { FiCornerDownRight } from "react-icons/fi";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ const ProfilePreview = ({ user }) => {
       <img src={avatar} alt="avatar" />
       <h4>{user.username}</h4>
       <span className="fullname">{user.fullname}</span>
-      <Button>Seguir</Button>
+      <FiCornerDownRight size={40} color={"#5931bf"} />
     </Wrapper>
   );
 };

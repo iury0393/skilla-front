@@ -4,9 +4,8 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Follow from "./Follow";
 import Modal from "./Modal";
-import Button from "../styles/Button";
 import { UserContext } from "../context/UserContext";
-import { FiLogOut, FiX } from "react-icons/fi";
+import { FiLogOut, FiX, FiEdit } from "react-icons/fi";
 
 const MobileWrapper = styled.div`
   margin: 1rem 0;
@@ -170,7 +169,7 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
 		<div style={{ maxHeight: '400px', overflowY: 'auto' }}>
       <div style={modalHeaderStyle}>
         <h3>{title}</h3>
-        <FiX size={30} onClick={closeModal} />
+        <FiX size={30} color={"#5931bf"} onClick={closeModal} />
       </div>
       {users.map((user) => (
         <ModalContentWrapper key={user._id}>
@@ -192,9 +191,9 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
                   history.push(`/${user.username}`);
                 }}
               >
-                {user.fullname}
+                {user.username}
               </h3>
-              <span>{user.username}</span>
+              <span>{user.fullname}</span>
             </div>
           </div>
           <Follow isFollowing={user.isFollowing} userId={user._id} />
@@ -234,16 +233,11 @@ const ProfileHeader = ({ profile }) => {
         <img className="avatar" src={profile?.avatar} alt="avatar" />
         <div className="profile-info">
           <div className="profile-meta">
-            <h2>{profile?.fullname}</h2>
+            <h2>{profile?.username}</h2>
             {profile?.isMe ? (
               <div className="options">
-                <Button
-                  secondary
-                  onClick={() => history.push("/accounts/edit")}
-                >
-                  Editar Perfil
-                </Button>
-                <FiLogOut className="icon-logout" size={30} onClick={handleLogout} />
+                <FiEdit size={30} color={"#5931bf"} onClick={() => history.push("/accounts/edit")} />
+                <FiLogOut className="icon-logout" size={30} color={"#5931bf"} onClick={handleLogout} />
               </div>
             ) : (
               <Follow
@@ -290,7 +284,7 @@ const ProfileHeader = ({ profile }) => {
           </div>
 
           <div className="bio">
-            <span className="bold">{profile?.username}</span>
+            <span className="bold">{profile?.fullname}</span>
             <p>{profile?.bio}</p>
             <a
               href={profile?.website}

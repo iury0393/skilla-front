@@ -5,8 +5,8 @@ import PostPreview from "../components/PostPreview";
 import ProfileHeader from "../components/ProfileHeader";
 import Placeholder from "../components/Placeholder";
 import Loader from "../components/Loader";
-import { PostIcon } from "../components/Icons";
 import { client } from "../utils";
+import { FiArchive } from "react-icons/fi";
 
 const Wrapper = styled.div`
   .profile-tab {
@@ -78,7 +78,7 @@ const Profile = () => {
           style={{ fontWeight: tab === "POSTS" ? "500" : "" }}
           onClick={() => setTab("POSTS")}
         >
-          <PostIcon />
+          <FiArchive size={25} color={"#5931bf"} />
           <span>Posts</span>
         </div>
       </div>

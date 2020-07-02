@@ -95,7 +95,7 @@ const Login = ({ register }) => {
 					value={password.value}
 					onChange={password.onChange}
 				/>
-				<input type="submit" value="Entrar" className="login-btn" />
+				<input type="submit" value="Entrar" style={{backgroundColor: "#5931BF"}} />
 			</form>
 
 			<div>

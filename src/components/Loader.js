@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { LoaderIcon } from "./Icons";
+import { FiLoader } from "react-icons/fi";
 
 const rotate = keyframes`
   from {
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 const Loader = () => {
   return (
     <Wrapper>
-      <LoaderIcon />
+      <FiLoader size={25} color={"#5931bf"} />
     </Wrapper>
   );
 };
