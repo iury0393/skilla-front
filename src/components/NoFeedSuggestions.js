@@ -86,9 +86,9 @@ const NoFeedSuggestions = () => {
                   className="pointer"
                   onClick={() => history.push(`/${user.username}`)}
                 >
-                  {user.fullname}
+                  {user.username}
                 </h4>
-                <span className="secondary">{user.username}</span>
+                <span className="secondary">{user.fullname}</span>
               </div>
             </div>
             <Follow isFollowing={user.isFollowing} userId={user._id} />
