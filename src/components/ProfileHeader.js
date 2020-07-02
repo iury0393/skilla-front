@@ -6,6 +6,7 @@ import Follow from "./Follow";
 import Modal from "./Modal";
 import { UserContext } from "../context/UserContext";
 import { FiLogOut, FiX, FiEdit } from "react-icons/fi";
+import SkillBar from "react-skillbars";
 
 const MobileWrapper = styled.div`
   margin: 1rem 0;
@@ -227,6 +228,11 @@ const ProfileHeader = ({ profile }) => {
 
   useEffect(() => setFollowers(profile?.followersCount), [profile]);
 
+  const skills = [
+    {type: "Java", level: 85},
+    {type: "Flutter", level: 74}
+  ]
+
   return (
     <>
       <Wrapper>
@@ -293,6 +299,11 @@ const ProfileHeader = ({ profile }) => {
             >
               {profile?.website}
             </a>
+            <SkillBar
+              skills={skills} 
+              colors={{bar: "#5931bf", title: {text: "#FFF", background: "#9510b7"}}}
+              height={20}
+            />
           </div>
         </div>
       </Wrapper>

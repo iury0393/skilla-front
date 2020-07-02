@@ -6807,6 +6807,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -9195,6 +9200,13 @@ react-scripts@3.4.1:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
+
+react-skillbars@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-skillbars/-/react-skillbars-1.6.1.tgz#9c08343a89b44aa6e3adfc572d33743bed20db61"
+  integrity sha512-vfenxvWl3KW4q8Ji6gXLRZFkAL1KFpfrP/8gQMWg5aREd9G1xhv0xnx2NcBHhWNhLf4NbhAOjO7AVQMatpRAqg==
+  dependencies:
+    lodash.throttle "4.1.1"
 
 react-toastify@^6.0.6:
   version "6.0.6"
