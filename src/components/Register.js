@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
 import { client } from "../utils";
-import { FormWrapper } from "./Login";
+import FormWrapper from "../styles/LoginRegister";
 import useInput from "../hooks/useInput";
 import { UserContext } from "../context/UserContext";
 

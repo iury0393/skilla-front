@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import LikePost from "./LikePost";
 import Comment from "./Comment";
@@ -10,24 +9,8 @@ import Avatar from "../styles/Avatar";
 import { client } from "../utils";
 import { timeSince } from "../utils";
 import { FiMoreHorizontal, FiMessageSquare, FiSend } from "react-icons/fi"
-
-const ModalContentWrapper = styled.div`
-	width: 300px;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-
-	span:last-child {
-		border: none;
-	}
-
-	span {
-		display: block;
-		padding: 1rem 0;
-		border-bottom: 1px solid ${props => props.theme.borderColor};
-		cursor: pointer;
-	}
-`;
+import PostWrapper from "../styles/Post";
+import ModalContentWrapper from "../styles/ModalContent";
 
 export const ModalContent = ({ hideGotoPost, postId, closeModal }) => {
 	const history = useHistory();
@@ -47,78 +30,6 @@ export const ModalContent = ({ hideGotoPost, postId, closeModal }) => {
 		</ModalContentWrapper>
 	);
 };
-
-export const PostWrapper = styled.div`
-	width: 615px;
-	background: ${props => props.theme.white};
-	border: 1px solid ${props => props.theme.borderColor};
-	margin-bottom: 1.5rem;
-
-	.post-header-wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.post-header {
-		display: flex;
-		align-items: center;
-		padding: 1rem;
-	}
-
-	.post-header h3 {
-		cursor: pointer;
-	}
-
-	.post-img {
-		width: 100%;
-		height: 100%;
-	}
-
-	.post-actions {
-		display: flex;
-		align-items: center;
-		padding: 0.5rem 1rem;
-		padding-bottom: 0.2rem;
-	}
-
-	.post-actions svg:last-child {
-		margin-left: auto;
-	}
-
-	svg {
-		margin-right: 1rem;
-	}
-
-	.likes-caption-comments {
-		padding: 1rem;
-		padding-top: 0.3rem;
-	}
-
-	.username {
-		padding-right: 0.3rem;
-	}
-
-	.view-comments {
-		color: ${props => props.theme.secondaryColor};
-		cursor: pointer;
-	}
-
-	textarea {
-		height: 100%;
-		width: 100%;
-		border: none;
-		border-top: 1px solid ${props => props.theme.borderColor};
-		resize: none;
-		padding: 1rem 0 0 1rem;
-		font-size: 1rem;
-		font-family: "Fira Sans", sans-serif;
-	}
-
-	@media screen and (max-width: 690px) {
-		width: 99%;
-	}
-`;
 
 const Post = ({ post }) => {
 	const comment = useInput("");
@@ -222,7 +133,7 @@ const Post = ({ post }) => {
 					<Comment key={comment._id} hideavatar={true} comment={comment} />
 				))}
 
-				<span className="secondary">{timeSince(post?.createdAt)} ago</span>
+				<span className="secondary">{timeSince(post?.createdAt)} atrás</span>
 			</div>
 
 			<div className="add-comment">
