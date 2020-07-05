@@ -6,18 +6,23 @@ align-items: center;
 font-size: 1.1rem;
 margin-bottom: 2rem;
 
+.profile-info {
+  padding-left: 35%;
+}
+
 .avatar {
   width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 90px;
-  margin-right: 2rem;
+  margin-left: 21%;
 }
 
 .profile-meta {
   display: flex;
   align-items: baseline;
   margin-bottom: 1rem;
+  margin-left: 43%;
 }
 
 .profile-meta h2 {
@@ -36,6 +41,20 @@ margin-bottom: 2rem;
   margin-left: 1rem;
 }
 
+.options-user svg {
+  position: relative;
+  top: 7px;
+  margin-left: 1rem;
+}
+
+.options-user {
+  margin-left: -15%;
+}
+
+.bio {
+  text-align: center;
+}
+
 span {
   padding-right: 1rem;
 }
@@ -44,12 +63,16 @@ a {
   color: ${(props) => props.theme.blue};
 }
 
+h2 {
+  text-align: center;
+}
 @media screen and (max-width: 645px) {
   font-size: 1rem;
 
   .bio,
   .profile-stats {
     display: none;
+    text-align: center;
   }
 
   .avatar {
@@ -68,6 +91,7 @@ a {
   .bio-mobile {
     margin: 1rem 0;
     display: block;
+    text-align: center;
   }
 }
 
