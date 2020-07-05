@@ -121,7 +121,7 @@ const Post = ({ post }) => {
 						onClick={() => history.push(`/p/${post._id}`)}
 						className="view-comments"
 					>
-						View all {post.commentsCount} comments
+						Ver todos {post.commentsCount} comentários
 					</span>
 				)}
 
