@@ -3,9 +3,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
 width: 280px;
 margin-top: 1rem;
-position: fixed;
-top: 6rem;
-left: 64.5%;
 
 .suggestions {
   margin-top: 1.8rem;
@@ -34,12 +31,6 @@ left: 64.5%;
 .follow {
   position: relative;
   top: -0.3rem;
-}
-
-.suggestions-title {
-  font-weight: bold;
-  font-size: 27px;
-  padding-bottom: 20px;
 }
 
 .user-name {

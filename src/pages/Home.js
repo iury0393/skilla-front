@@ -49,7 +49,6 @@ const Home = () => {
 							<Post key={post._id} post={post} />
 						))}
 					</div>
-					<Suggestions />{" "}
 				</>
 			) : (
 				<NoFeedSuggestions />

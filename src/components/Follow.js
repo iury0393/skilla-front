@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../utils";
-import { FiCornerDownRight, FiCornerDownLeft } from "react-icons/fi";
+import { FiSquare, FiCheckSquare } from "react-icons/fi";
 
 const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
   const [followingState, setFollowingState] = useState(isFollowing);
@@ -32,10 +32,10 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
             className="pointer"
             onClick={() => handleFollow()}
           >
-            <FiCornerDownLeft size={40} color={"#5931bf"} />
+            <FiCheckSquare size={40} color={"#5931bf"} className="options" />
           </span>
         ) : (
-          <FiCornerDownLeft size={40} color={"#5931bf"} onClick={() => handleFollow()} />
+          <FiCheckSquare size={40} color={"#5931bf"} className="options" onClick={() => handleFollow()} />
         )}
       </>
     );
@@ -44,10 +44,10 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId }) => {
       <>
         {nobtn ? (
           <span className="pointer" onClick={() => handleFollow()}>
-            <FiCornerDownRight size={40} color={"#5931bf"} />
+            <FiSquare size={40} color={"#5931bf"} className="options" />
           </span>
         ) : (
-          <FiCornerDownRight size={40} color={"#5931bf"} onClick={() => handleFollow()} />
+          <FiSquare size={40} color={"#5931bf"} className="options" onClick={() => handleFollow()} />
         )}
       </>
     );

@@ -93,12 +93,13 @@ const ProfileHeader = ({ profile }) => {
   return (
     <>
       <Wrapper>
-        <img className="avatar" src={profile?.avatar} alt="avatar" />
         <div className="profile-info">
+        <img className="avatar" src={profile?.avatar} alt="avatar" />
+        <h2>{profile?.username}</h2>
           <div className="profile-meta">
-            <h2>{profile?.username}</h2>
+            
             {profile?.isMe ? (
-              <div className="options">
+              <div className="options-user">
                 <FiEdit size={30} color={"#5931bf"} onClick={() => history.push("/accounts/edit")} />
                 <FiLogOut className="icon-logout" size={30} color={"#5931bf"} onClick={handleLogout} />
               </div>

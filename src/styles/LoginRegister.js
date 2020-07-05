@@ -41,6 +41,12 @@ const FormWrapper = styled.div`
 		color: ${props => props.theme.blue};
 		cursor: pointer;
 	}
+
+	.input-group{
+		margin-bottom: 15px;
+    padding-left: 28px;
+		width: 93%;
+	}
 `;
 
 export default FormWrapper;
