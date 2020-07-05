@@ -17,19 +17,19 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 1rem;
 		line-height: 1.7;
 		background: ${(props) => props.theme.bg};
-		color: #5931BF;
+		/*color: #5931BF;*/
 		overflow-x: hidden;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: normal;
-		color: #5931BF;
+		/*color: #5931BF;*/
 	}
 
 	a {
 		text-decoration: none;
 		cursor: pointer;
-		color: #5931BF;
+		/*color: #5931BF;*/
 	}
 
 	.pointer {

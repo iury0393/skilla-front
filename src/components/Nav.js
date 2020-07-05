@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import NavWrapper from "../styles/Nav";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
-import { FiHome, FiGlobe, FiShoppingBag, FiSearch } from "react-icons/fi";
+import { FiHome, FiGlobe, FiSearch } from "react-icons/fi";
+import CartIcon from "./cart-icon/cart-icon.component";
 
 
-
-const Nav = () => {
+const Nav = ({ hidden }) => {
   const { user } = useContext(UserContext);
 
   return (
@@ -37,8 +38,8 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-          <Link to={`/shop`}>
-            <FiShoppingBag size={25} color={"#5931bf"} />
+            <Link to={"/shop"}>
+              <CartIcon size={25} />
             </Link>
           </li>
           <li>
@@ -61,4 +62,8 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+const mapStateToProps = ({ cart: { hidden } }) => ({
+  hidden,
+});
+
+export default connect(mapStateToProps)(Nav);

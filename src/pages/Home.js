@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
-import Suggestions from "../components/Suggestions";
 import NoFeedSuggestions from "../components/NoFeedSuggestions";
 import Post from "../components/Post";
 import Loader from "../components/Loader";
