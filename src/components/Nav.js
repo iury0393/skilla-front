@@ -1,16 +1,24 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import NavWrapper from "../styles/Nav";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
-import { FiHome, FiGlobe, FiSearch } from "react-icons/fi";
+import { FiHome, FiGlobe, FiSearch, FiLogOut, FiAward } from "react-icons/fi";
 import CartIcon from "./cart-icon/cart-icon.component";
 
 
 const Nav = ({ hidden }) => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    toast.success("Você está deslogado");
+  };
 
   return (
     <NavWrapper>
@@ -26,6 +34,11 @@ const Nav = ({ hidden }) => {
           </li>
           <li>
             <NewPost />
+          </li>
+          <li>
+            <Link to="/opportunities">
+              <FiAward size={25} color={"#5931bf"} />
+            </Link>
           </li>
           <li>
             <Link to="/explore">
@@ -55,6 +68,9 @@ const Nav = ({ hidden }) => {
                 alt="avatar"
               />
             </Link>
+          </li>
+          <li>
+            <FiLogOut size={30} color={"#1a0e39"} onClick={handleLogout} />
           </li>
         </ul>
       </nav>

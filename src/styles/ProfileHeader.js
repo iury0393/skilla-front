@@ -22,7 +22,7 @@ margin-bottom: 2rem;
   display: flex;
   align-items: baseline;
   margin-bottom: 1rem;
-  margin-left: 43%;
+  margin-left: 48%;
 }
 
 .profile-meta h2 {
