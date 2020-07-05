@@ -8,6 +8,8 @@ import Routing from "./routes";
 import { UserContext } from "./context/UserContext";
 import { ThemeContext } from "./context/ThemeContext";
 
+import "./App.css";
+
 const App = () => {
   const { user } = useContext(UserContext);
   const { theme } = useContext(ThemeContext);
