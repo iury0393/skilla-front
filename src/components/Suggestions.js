@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Follow from "./Follow";
 import Avatar from "../styles/Avatar";
-import { UserContext } from "../context/UserContext";
 import { client } from "../utils";
 import Wrapper from "../styles/Suggestions";
 import StyledUserCard from "../styles/StyleUserCard";
@@ -34,7 +33,6 @@ export const UserCard = ({ user }) => {
 };
 
 const Suggestions = () => {
-  const { user } = useContext(UserContext);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -45,10 +43,7 @@ const Suggestions = () => {
 
   return (
     <Wrapper>
-      <UserCard user={user} />
-
       <div className="suggestions">
-        <h3 className="suggestions-title">Sugestões para você</h3>
         {users.slice(0, 4).map((user) => (
           <div key={user.username} className="suggestions-usercard">
             <UserCard user={user} />

@@ -4,7 +4,7 @@ import NavWrapper from "../styles/Nav";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
-import { FiHome, FiGlobe, FiShoppingBag } from "react-icons/fi";
+import { FiHome, FiGlobe, FiShoppingBag, FiSearch } from "react-icons/fi";
 
 
 
@@ -29,6 +29,11 @@ const Nav = () => {
           <li>
             <Link to="/explore">
               <FiGlobe size={25} color={"#5931bf"} />
+            </Link>
+          </li>
+          <li>
+            <Link to="/suggestions">
+              <FiSearch size={25} color={"#5931bf"} />
             </Link>
           </li>
           <li>

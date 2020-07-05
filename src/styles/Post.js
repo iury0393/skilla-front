@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PostWrapper = styled.div`
-width: 615px;
+width: 100%;
 background: ${props => props.theme.white};
 border: 1px solid ${props => props.theme.borderColor};
 margin-bottom: 1.5rem;
