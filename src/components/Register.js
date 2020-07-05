@@ -77,6 +77,7 @@ const Register = ({ login }) => {
 							aria-describedby="basic-addon"
 							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 							title="Escreva o email no formato correto"
+							required
 							value={email.value}
 							onChange={email.onChange}
 						/>
@@ -93,6 +94,7 @@ const Register = ({ login }) => {
 							aria-label="Nome completo"
 							placeholder="Nome completo"
 							aria-describedby="basic-addon"
+							required
 							value={fullname.value}
 							onChange={fullname.onChange}
 						/>
@@ -109,6 +111,7 @@ const Register = ({ login }) => {
 							aria-label="Usuário"
 							placeholder="Usuário"
 							aria-describedby="basic-addon"
+							required
 							value={username.value}
 							onChange={username.onChange}
 						/>
@@ -127,6 +130,7 @@ const Register = ({ login }) => {
 							aria-describedby="basic-addon"
 							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="Deve conter pelo menos um número e uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres"
+							required
 							value={password.value}
 							onChange={password.onChange}
 						/>
