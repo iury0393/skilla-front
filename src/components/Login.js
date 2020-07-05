@@ -55,6 +55,7 @@ const Login = ({ register }) => {
 							aria-label="Email"
 							placeholder="Email"
 							aria-describedby="basic-addon"
+							required
 							value={email.value}
 							onChange={email.onChange}
 						/>
@@ -71,6 +72,7 @@ const Login = ({ register }) => {
 							aria-label="Senha"
 							placeholder="Senha"
 							aria-describedby="basic-addon"
+							required
 							value={password.value}
 							onChange={password.onChange}
 						/>
