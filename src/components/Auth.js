@@ -30,13 +30,7 @@ const Auth = () => {
       <>
         <>
           <Modal show={isOpen} onHide={hideModal}>
-            <Modal.Header>
-              <Modal.Title>Entre no Skilla</Modal.Title>
-            </Modal.Header>
             <Modal.Body><Login register={register} /></Modal.Body>
-            <Modal.Footer>
-              <Button variant="outline-danger" onClick={hideModal}>Cancelar</Button>
-            </Modal.Footer>
           </Modal>
         </>
         <Navbar bg="light" expand="lg">
@@ -67,13 +61,7 @@ const Auth = () => {
       <>
         <>
           <Modal show={isOpen} onHide={hideModal}>
-            <Modal.Header>
-              <Modal.Title>Entre no Skilla</Modal.Title>
-            </Modal.Header>
             <Modal.Body><Register login={login} /></Modal.Body>
-            <Modal.Footer>
-              <Button variant="outline-danger" onClick={hideModal}>Cancelar</Button>
-            </Modal.Footer>
           </Modal>
         </>
         <Navbar bg="light" expand="lg">

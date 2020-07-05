@@ -4,6 +4,7 @@ import { client } from "../utils";
 import FormWrapper from "../styles/LoginRegister";
 import useInput from "../hooks/useInput";
 import { UserContext } from "../context/UserContext";
+import { FiMail, FiKey, FiUser, FiUserCheck } from "react-icons/fi";
 
 import logo from "../assets/logo.png";
 const Register = ({ login }) => {
@@ -62,30 +63,70 @@ const Register = ({ login }) => {
       <img src={logo} alt="logo" />
 
       <form>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email.value}
-          onChange={email.onChange}
-        />
-        <input
-          type="text"
-          placeholder="Nome completo"
-          value={fullname.value}
-          onChange={fullname.onChange}
-        />
-        <input
-          type="text"
-          placeholder="Usuário"
-          value={username.value}
-          onChange={username.onChange}
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password.value}
-          onChange={password.onChange}
-        />
+        <div className="input-group">
+					<div className="input-group-prepend">
+						<span className="input-group-text" id="basic-addon">
+							<FiMail color={"#5931BF"} />
+						</span>
+					</div>
+					<input
+							type="email"
+							className="form-control"
+							aria-label="Email"
+							placeholder="Email"
+							aria-describedby="basic-addon"
+							value={email.value}
+							onChange={email.onChange}
+						/>
+				</div>
+        <div className="input-group">
+					<div className="input-group-prepend">
+						<span className="input-group-text" id="basic-addon">
+							<FiUserCheck color={"#5931BF"} />
+						</span>
+					</div>
+					<input
+							type="text"
+							className="form-control"
+							aria-label="Nome completo"
+							placeholder="Nome completo"
+							aria-describedby="basic-addon"
+							value={fullname.value}
+							onChange={fullname.onChange}
+						/>
+				</div>
+        <div className="input-group">
+					<div className="input-group-prepend">
+						<span className="input-group-text" id="basic-addon">
+							<FiUser color={"#5931BF"} />
+						</span>
+					</div>
+					<input
+							type="text"
+							className="form-control"
+							aria-label="Usuário"
+							placeholder="Usuário"
+							aria-describedby="basic-addon"
+							value={username.value}
+							onChange={username.onChange}
+						/>
+				</div>
+				<div className="input-group">
+					<div className="input-group-prepend">
+						<span className="input-group-text" id="basic-addon">
+							<FiKey color={"#5931BF"} />
+						</span>
+					</div>
+					<input
+							type="password"
+							className="form-control"
+							aria-label="Senha"
+							placeholder="Senha"
+							aria-describedby="basic-addon"
+							value={password.value}
+							onChange={password.onChange}
+						/>
+				</div>
         <input type="submit" value="Registre" style={{backgroundColor: "#5931BF"}} />
       </form>
 
