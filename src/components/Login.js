@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import { client } from "../utils";
 import FormWrapper from "../styles/LoginRegister";
@@ -13,6 +14,12 @@ const Login = ({ register }) => {
 	const { setUser } = useContext(UserContext);
 	const email = useInput("");
 	const password = useInput("");
+	const [recaptcha, setRecaptcha] = useState(false);
+
+	const recaptchaVerify = (value) => {
+		//console.log("Captcha value:", value);
+		setRecaptcha(true);
+	}
 
 	const handleLogin = async e => {
 		e.preventDefault();
@@ -77,8 +84,16 @@ const Login = ({ register }) => {
 							onChange={password.onChange}
 						/>
 				</div>
-				<input type="submit" value="Entrar" style={{backgroundColor: "#5931BF"}} />
+				{recaptcha ? (
+					<input type="submit" value="Entrar" style={{backgroundColor: "#5931BF"}} />
+				) : (
+					<input type="submit" value="Entrar" style={{backgroundColor: "#808080"}} disabled />
+				)}
 			</form>
+			<ReCAPTCHA
+				sitekey="6Lceca4ZAAAAAOV12tH8Q8eVOToMBkl4qEu1KwPI"
+				onChange={recaptchaVerify}
+			/>
 
 			<div>
 				<p>
