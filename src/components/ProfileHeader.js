@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Follow from "./Follow";
-import Modal from "./Modal";
+import ModalUse from "./Modal";
 import { UserContext } from "../context/UserContext";
 import { FiX, FiEdit } from "react-icons/fi";
+import { Modal, Button } from 'react-bootstrap';
 import SkillBar from "react-skillbars";
+import PDF from './PDF';
 import ModalContentWrapper from "../styles/ModalContentProfileHeader";
 import MobileWrapper from "../styles/MobileHeader";
 import Wrapper from "../styles/ProfileHeader";
@@ -63,6 +65,15 @@ const ModalContent = ({ loggedInUser, users, closeModal, title }) => {
 const ProfileHeader = ({ profile }) => {
   const history = useHistory();
   const { user } = useContext(UserContext);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const showModal = () => {
+    setIsOpen(true);
+  };
+
+  const hideModal = () => {
+    setIsOpen(false);
+  };
 
   const [showFollowersModal, setFollowersModal] = useState(false);
   const [showFollowingModal, setFollowingModal] = useState(false);
@@ -116,25 +127,25 @@ const ProfileHeader = ({ profile }) => {
             </span>
 
             {showFollowersModal && profile?.followers.length > 0 && (
-              <Modal>
+              <ModalUse>
                 <ModalContent
                   loggedInUser={user}
                   users={profile?.followers}
                   title="Seguidores"
                   closeModal={closeModal}
                 />
-              </Modal>
+              </ModalUse>
             )}
 
             {showFollowingModal && profile?.following.length > 0 && (
-              <Modal>
+              <ModalUse>
                 <ModalContent
                   loggedInUser={user}
                   users={profile?.following}
                   title="Seguindo"
                   closeModal={closeModal}
                 />
-              </Modal>
+              </ModalUse>
             )}
           </div>
 
@@ -148,6 +159,10 @@ const ProfileHeader = ({ profile }) => {
             >
               {profile?.website}
             </a>
+            <Modal show={isOpen} onHide={hideModal}>
+              <Modal.Body><PDF /></Modal.Body>
+            </Modal>
+              <Button style={{backgroundColor: "#5931BF", marginBottom: 20}} onClick={showModal}>Currículo</Button>
             <SkillBar
               skills={skills} 
               colors={{bar: "#5931bf", title: {text: "#FFF", background: "#9510b7"}}}
@@ -169,25 +184,25 @@ const ProfileHeader = ({ profile }) => {
           </span>
 
           {showFollowersModal && profile?.followers.length > 0 && (
-            <Modal>
+            <ModalUse>
               <ModalContent
                 loggedInUser={user}
                 users={profile?.followers}
                 title="Seguidores"
                 closeModal={closeModal}
               />
-            </Modal>
+            </ModalUse>
           )}
 
           {showFollowingModal && profile?.following.length > 0 && (
-            <Modal>
+            <ModalUse>
               <ModalContent
                 loggedInUser={user}
                 users={profile?.following}
                 title="Seguindo"
                 closeModal={closeModal}
               />
-            </Modal>
+            </ModalUse>
           )}
         </div>
         <div className="mobile-bio">
