@@ -22,7 +22,7 @@ O Skilla é um projeto desenvilvido por alunos da Unifor para a nossa disciplina
 ## Run Project
 
 ```git
-git clone https://github.com/iury0393/chatbot-flutter
+git clone https://github.com/iury0393/skilla-front
 ```
 
 Ajuste o env com suas credenciais
