@@ -5,7 +5,7 @@ import NavWrapper from "../styles/Nav";
 import { UserContext } from "../context/UserContext";
 import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
-import { FiHome, FiGlobe, FiShoppingBag } from "react-icons/fi";
+import { FiHome, FiGlobe } from "react-icons/fi";
 import CartIcon from "./cart-icon/cart-icon.component";
 import CartDropdown from "./cart-dropdown/cart-dropdown.component";
 

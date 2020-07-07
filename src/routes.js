@@ -8,7 +8,7 @@ import Explore from "./pages/Explore";
 import DetailedPost from "./pages/DetailedPost";
 import EditProfile from "./pages/EditProfile";
 import Shop from "./pages/ShopPage/shop.component.jsx";
-import CheckoutPage from "./pages/checkout/checkout.component.jsx";
+import Checkout from "./pages/checkout/checkout.component"
 
 const Routing = () => {
   return (
@@ -17,11 +17,11 @@ const Routing = () => {
       <Container>
         <Switch>
           <Route path="/explore" component={Explore} />
+          <Route path="/checkout" component={Checkout} />
           <Route path="/shop" component={Shop} />
           <Route path="/p/:postId" component={DetailedPost} />
           <Route path="/accounts/edit" component={EditProfile} />
           <Route path="/:username" component={Profile} />
-          <Route path="/checkout" component={CheckoutPage} />
           <Route path="/" component={Home} />
         </Switch>
       </Container>
