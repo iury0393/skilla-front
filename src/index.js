@@ -5,17 +5,23 @@ import { Provider } from "react-redux";
 import { UserProvider } from "./context/UserContext";
 import { FeedProvider } from "./context/FeedContext";
 import { ThemeProvider } from "./context/ThemeContext";
-import { store } from "./redux/store";
+import { store, persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { BrowserRouter } from "react-router-dom";
 
 render(
-  <Provider store={store}>
-    <UserProvider>
-      <FeedProvider>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </FeedProvider>
-    </UserProvider>
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <UserProvider>
+        <FeedProvider>
+          <ThemeProvider>
+            <PersistGate persistor={persistor}>
+              <App />
+            </PersistGate>
+          </ThemeProvider>
+        </FeedProvider>
+      </UserProvider>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
