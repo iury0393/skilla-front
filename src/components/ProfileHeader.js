@@ -159,7 +159,7 @@ const ProfileHeader = ({ profile }) => {
             >
               {profile?.website}
             </a>
-            <Modal show={isOpen} onHide={hideModal}>
+            {/* <Modal show={isOpen} onHide={hideModal}>
               <Modal.Body><PDF /></Modal.Body>
             </Modal>
               <Button style={{backgroundColor: "#5931BF", marginBottom: 20}} onClick={showModal}>Currículo</Button>
@@ -167,7 +167,7 @@ const ProfileHeader = ({ profile }) => {
               skills={skills} 
               colors={{bar: "#5931bf", title: {text: "#FFF", background: "#9510b7"}}}
               height={20}
-            />
+            /> */}
           </div>
         </div>
       </Wrapper>
