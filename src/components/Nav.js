@@ -8,6 +8,7 @@ import navlogo from "../assets/navlogo.png";
 import NewPost from "./NewPost";
 import { FiHome, FiGlobe, FiSearch, FiLogOut, FiAward } from "react-icons/fi";
 import CartIcon from "./cart-icon/cart-icon.component";
+import CartDropdown from "./cart-dropdown/cart-dropdown.component";
 
 
 const Nav = ({ hidden }) => {
@@ -21,6 +22,7 @@ const Nav = ({ hidden }) => {
   };
 
   return (
+    <>
     <NavWrapper>
       <nav>
         <Link to="/">
@@ -75,6 +77,8 @@ const Nav = ({ hidden }) => {
         </ul>
       </nav>
     </NavWrapper>
+    {hidden ? null : <CartDropdown />}
+    </>
   );
 };
 
