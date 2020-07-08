@@ -167,7 +167,7 @@ const ProfileHeader = ({ profile }) => {
               skills={skills} 
               colors={{bar: "#5931bf", title: {text: "#FFF", background: "#9510b7"}}}
               height={20}
-            />
+            /> 
           </div>
         </div>
       </Wrapper>
