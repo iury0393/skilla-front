@@ -29,8 +29,8 @@ textarea {
   resize: none;
 }
 
-.modal-content {
-  width: 700px;
+.modal-btn-post{
+  margin-left: 90%;
 }
 
 @media screen and (max-width: 780px) {

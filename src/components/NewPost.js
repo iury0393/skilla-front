@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import NewPostWrapper from "../styles/NewPost";
-import Modal from "./Modal";
+import { Modal, Button, Form } from 'react-bootstrap';
 import useInput from "../hooks/useInput";
 import { FeedContext } from "../context/FeedContext";
 import { client, uploadImage } from "../utils";
@@ -80,23 +80,31 @@ const NewPost = () => {
 				style={{ display: "none" }}
 			/>
 			{showModal && (
-				<Modal>
-					<div className="modal-content">
-						<div className="newpost-header">
-							<h3 onClick={() => setShowModal(false)}>Cancelar</h3>
-							<h3 onClick={handleSubmitPost}>Compartilhar</h3>
-						</div>
+				<Modal show={setShowModal}>
+					<Modal.Header>
+						<Button variant="danger" onClick={() => setShowModal(false)}>
+							Cancelar
+						</Button>
+						<Button variant="primary" className="modal-btn-post" onClick={handleSubmitPost}>
+							Compartilhar
+						</Button>
+					</Modal.Header>
+					<Modal.Body>
 						{preview && (
-							<img className="post-preview" src={preview} alt="preview" />
+							<img className="post-preview" style={{width: "100%"}} src={preview} alt="preview" />
 						)}
-						<div>
-							<textarea
+					</Modal.Body>
+					<Modal.Footer style={{display: "block"}}>
+						<Form.Group controlId="exampleForm.ControlTextarea1">
+							<Form.Control 
+								as="textarea"
+								rows="3"
 								placeholder="Adicione uma legenda"
 								value={caption.value}
 								onChange={caption.onChange}
 							/>
-						</div>
-					</div>
+						</Form.Group>
+					</Modal.Footer>
 				</Modal>
 			)}
 		</NewPostWrapper>
