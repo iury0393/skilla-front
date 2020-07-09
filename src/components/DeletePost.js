@@ -22,7 +22,7 @@ const DeletePost = ({ postId, closeModal, goToHome }) => {
 
   return (
     <span className="danger" onClick={handleDeletePost}>
-      Delete Post
+      Deletar Post
     </span>
   );
 };

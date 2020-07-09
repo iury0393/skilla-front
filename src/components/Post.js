@@ -23,10 +23,10 @@ export const ModalContent = ({ hideGotoPost, postId, closeModal }) => {
 	return (
 		<ModalContentWrapper>
 			<span className="danger" onClick={closeModal}>
-				Cancel
+				Cancelar
 			</span>
 			<DeletePost postId={postId} closeModal={closeModal} goToHome={true} />
-			{!hideGotoPost && <span onClick={handleGoToPost}>Go to Post</span>}
+			{!hideGotoPost && <span onClick={handleGoToPost}>Ir para o Post</span>}
 		</ModalContentWrapper>
 	);
 };

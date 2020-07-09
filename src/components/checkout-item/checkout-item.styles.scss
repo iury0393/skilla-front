@@ -22,19 +22,30 @@
     width: 23%;
   }
 
+  .price {
+    position: relative;
+    left: 15px;
+  }
+
   .quantity {
-   display: flex;
+    display: flex;
+    position: relative;
+    left: 15px;
 
-   .arrow {
-     cursor: pointer;
-   }
+    .arrow {
+      cursor: pointer;
+    }
 
-   .value {
-     margin: 0 10px;
-   }
+    .value {
+      margin: 0 10px;
+      left: 15px;
+    }
   }
 
   .remove-button {
+    position: relative;
+    left: 15px;
+
     padding-left: 12px;
     cursor: pointer;
   }
