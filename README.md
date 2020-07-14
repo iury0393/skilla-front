@@ -5,8 +5,7 @@
     <img src="https://img.shields.io/static/v1?label=React&message=JS&color=blue?style=plastic&logo=React" alt="ReactJS" />
   </a>
 </p>
-
----
+<p align="center"><img src=".gitdocs/skilla.png" /></p>
 
 ## About
 
